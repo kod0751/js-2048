@@ -1,10 +1,20 @@
+body {
+    background: #FAF8F0;
+}
+
+.container {
+    position: relative; 
+    width: 425px;
+    margin: 0 auto;
+}
+
 .header {
     width: 425px;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-items: center;
+    margin-top: 30px;
 }
 
 .header #menu_container {
@@ -12,8 +22,6 @@
     width: 75px;
     height: 40px;
     padding-bottom: 2px;
-    justify-items: center;
-    align-items: center;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
@@ -21,33 +29,20 @@
 }
 
 h1 {
-    padding-left: 40px;
+    font-size: 40px;
     color: #7E7367;
 }
 
-.main {
-    display: flex;
-    flex-wrap: wrap;
-    width: 425px;
-    height: 525px;
-    background: #FAF8F0;
-    border-radius: 20px;
+
+#table {
+    border-collapse: collapse;
 }
 
-
-.grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
-}
-
-.grid div{
-    width: 100px;
-    height: 100px;
-    background: white;
-    border-radius: 10px;
-    font-size: 30px;
+#table td{
+    border: 5px solid black;
+    width: 150px;
+    height: 150px;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
 }
