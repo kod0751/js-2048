@@ -1,22 +1,40 @@
-const gridDisplay = document.querySelector('.grid');
-const scoreDisplay = document.getElementById('score');
-const resultDisplay = document.getElementById('result');
-const width = 4;
-let squares = [];
+let table = document.getElementById('table');
+let data = [];
 
 function createBorad() {
+    let fragment = document.createDocumentFragment();
+    [1,2,3,4].forEach(function() {
+        let rowData = [];
+        data.push(rowData);
+        let tr = document.createElement('tr');
+        [1,2,3,4].forEach(function(){
+            rowData.push(0);
+            let td = document.createElement('td');
+            tr.appendChild(td);
+        });
+        fragment.appendChild(tr);
+    });
+    table.appendChild(fragment);
+}
 
-    for (let i=0; i < width*width; i++) {
-        square = document.createElement('div')
-        square.innerHTML = 0
-        gridDisplay.appendChild(square)
-        squares.push(square)
-    }
-};
+function draw() {
+    data.forEach(function(rowData, i) {
+        rowData.forEach(function(colData, j) {
+            if(colData > 0 ) {
+                table.children[i].children[j].textContent = colData;
+            } else {
+                table.children[i].children[j].textContent = '';
+            }
+        });
+    });
+}
+    
 
 function main() {
+
     //게임 보드 생성
     createBorad();
+    draw();
 
     //각 방향으로 이동
 
@@ -25,7 +43,6 @@ function main() {
     //점수 계산
 
     //게임 종료
-
     
 }
 
