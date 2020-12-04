@@ -65,7 +65,7 @@ function downMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[j].push(rowData);
+                newData[j].unshift(rowData);
             }
         });
     });
@@ -101,7 +101,7 @@ function rightMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[i].push(rowData);
+                newData[i].unshift(rowData);
             }
         });
     });
