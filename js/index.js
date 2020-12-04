@@ -81,7 +81,11 @@ function leftMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[i].push(rowData);
+                if(newData[i][newData[i].length - 1] && newData[i][newData[i].length - 1] === rowData) {
+                    newData[i][newData[i].length - 1] *= 2;
+                } else {
+                    newData[i].push(rowData);
+                }
             }
         });
     });
@@ -153,6 +157,7 @@ function main() {
 
     //이동된 숫자들 합쳐주는 함수
 
+    
     //점수 계산
 
     //게임 종료
