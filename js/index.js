@@ -52,7 +52,6 @@ function upMove() {
             }
         });
     });
-    console.log(newData);
     [1,2,3,4].forEach(function(rowData, i) {
         [1,2,3,4].forEach(function(colData, j) {
             data[j][i] = newData[i][j] || 0;
@@ -89,6 +88,7 @@ function leftMove() {
             }
         });
     });
+    console.log(newData);
     [1,2,3,4].forEach(function(colData, i) {
         [1,2,3,4].forEach(function(rowData, j) {
             data[i][j] = newData[i][j] || 0;
@@ -101,10 +101,15 @@ function rightMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[i].unshift(rowData);
+                if(newData[i][0] && newData[i][0] === rowData) {
+                    newData[i][0] *= 2;
+                } else {
+                    newData[i].unshift(rowData);
+                }
             }
         });
     });
+    console.log(newData);
     [1,2,3,4].forEach(function(colData, i) {
         [1,2,3,4].forEach(function(rowData, j) {
             data[i][3 - j] = newData[i][j] || 0;
