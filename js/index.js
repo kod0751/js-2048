@@ -48,7 +48,11 @@ function upMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[j].push(rowData);
+                if(newData[j][newData[j].length - 1] && newData[j][newData[j].length - 1] === rowData) {
+                    newData[j][newData[j].length - 1] *= 2;
+                } else {
+                    newData[j].push(rowData);
+                }
             }
         });
     });
