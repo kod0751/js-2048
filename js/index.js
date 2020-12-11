@@ -68,7 +68,11 @@ function downMove() {
     data.forEach(function(colData, i) {
         colData.forEach(function(rowData, j) {
             if(rowData) {
-                newData[j].unshift(rowData);
+                if(newData[j][0] && newData[j][0] === rowData) {
+                    newData[j][0] *= 2;
+                } else {
+                    newData[j].unshift(rowData);
+                }
             }
         });
     });
