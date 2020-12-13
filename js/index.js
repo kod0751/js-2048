@@ -144,7 +144,6 @@ function keyRight() {
     rightMove();
     randomNumber();
 }
-    
 
 function main() {
 
@@ -167,9 +166,6 @@ function main() {
         }
     }
     document.addEventListener('keyup', control)
-
-    //이동된 숫자들 합쳐주는 함수
-
     
     //점수 계산
 
